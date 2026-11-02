@@ -1,0 +1,23 @@
+name: Evaluate retail ML models
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'compare_models.py'
+      - '.github/workflows/evaluate-models.yml'
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas numpy scikit-learn
+      - run: python compare_models.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: retail-ml-results
+          path: |
+            model_comparison.csv
+            holdout_predictions.csv
