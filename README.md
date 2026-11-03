@@ -13,3 +13,7 @@ Interactive retail sales analytics and experimental machine-learning customer di
 The dataset includes 200 transactions. The binary target is invoice rating below 3. The evaluation script compares Logistic Regression and Random Forest against a majority-class baseline using expanding-window validation on training records and a final chronological holdout. Target-derived ratings are excluded from predictors.
 
 **Important:** A successful GitHub Actions workflow indicates that the script ran; it does not by itself demonstrate improved model quality. Consult the workflow artifact `model_comparison.csv` for actual results. These experimental models should not be used for real customer decisions.
+
+## Business case study for recruiters
+
+Read the [retail analytics business case study](BUSINESS_CASE_STUDY.md) for the business problem, data scope, analytical approach, limitations and management recommendations.
